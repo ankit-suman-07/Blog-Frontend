@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+## Frontend deployed at: https://cozy-capybara-9c1829.netlify.app/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
