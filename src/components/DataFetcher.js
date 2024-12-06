@@ -7,10 +7,13 @@ const DataFetcher = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Define the endpoint URL
+  const endpoint = 'https://blog-backend-axna.onrender.com/api/blogs';
+  const imgEndpoint = 'https://blog-backend-axna.onrender.com';
+
   // UseEffect hook to make the API request when the component mounts
   useEffect(() => {
-    // Define the endpoint URL
-    const endpoint = 'https://blog-backend-axna.onrender.com/api/blogs';
+    
 
     // Make the GET request using axios
     axios.get(endpoint)
@@ -45,7 +48,7 @@ const DataFetcher = () => {
             <p><strong>Category:</strong> {item.category}</p>
             <p><strong>Author:</strong> {item.author}</p>
             {/* Render the image if available */}
-            {item.image && <img src={`https://blog-backend-axna.onrender.com${item.image}`} alt={item.topic} width="200" />}
+            {item.image && <img src={`${imgEndpoint}${item.image}`} alt={item.topic} width="200" />}
           </li>
         ))}
       </ul>
