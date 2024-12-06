@@ -38,7 +38,16 @@ const DataFetcher = () => {
     <div>
       <h1>Data Fetching Example</h1>
       <ul>
-        {data[0]}
+        {data && data.map((item) => (
+          <li key={item.id}>
+            <h3>{item.topic}</h3>
+            <p>{item.text}</p>
+            <p><strong>Category:</strong> {item.category}</p>
+            <p><strong>Author:</strong> {item.author}</p>
+            {/* Render the image if available */}
+            {item.image && <img src={`https://blog-backend-axna.onrender.com${item.image}`} alt={item.topic} width="200" />}
+          </li>
+        ))}
       </ul>
     </div>
   );
