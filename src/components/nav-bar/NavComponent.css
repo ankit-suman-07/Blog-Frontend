@@ -1,26 +1,25 @@
 .nav-style {
     height: 60px;
-    border: 2px solid black;
+    width: 1000px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
-    border: 2px solid black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
     font-size: 40px;
+    color: #272432;
 }
 
 .dot {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 60px;
-    color: red;
+    color: #ec3646;
 }
 
 .nav-menu {
-    border: 2px solid black;
     height: 60px;
     display: flex;
     align-items: center;
@@ -31,7 +30,7 @@
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 14px;
-    color: #333333;
+    color: #728591;
     font-weight: 600;
     margin-left: 20px;
     transition: all 0.3s;
@@ -39,6 +38,6 @@
 
 .active {
     border-bottom: 4px solid black;
-    border-color: red;
+    border-color: #ec3646;
 
 }

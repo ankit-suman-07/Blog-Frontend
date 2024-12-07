@@ -1,18 +1,19 @@
 import React from 'react'
+import MainImage from "../../assets/main-pic.png"
+import "./Home.css"
 
 const Home = () => {
   return (
-    <>
-        <header>
-        </header>
-        
+    <div className='main-area'>
         <main>
-            <section>HOME Page</section>
+            <section className='hero' >
+              <img src={MainImage} alt='main-hoarding' />
+            </section>
         </main>
         <footer>
 
         </footer>
-    </>
+    </div>
   )
 }
 

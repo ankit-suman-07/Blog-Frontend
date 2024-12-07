@@ -1,0 +1,17 @@
+.main-area {
+    max-width: 1000px;
+    border: 2px solid black;
+}
+
+main {
+    border: 2px solid black;
+    min-height: 100dvh;
+}
+
+.hero {
+    width: 100%;
+}
+
+.hero img {
+    width: 100%;
+}
