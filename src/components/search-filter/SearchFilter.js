@@ -27,7 +27,6 @@ const SearchFilter = () => {
             />
             <img src={SearchIcon} alt='search-icon' />
         </div>
-              
     </div>
   )
 }
