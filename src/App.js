@@ -9,9 +9,12 @@ import Contact from './pages/contact/Contact';
 import NavComponent from './components/nav-bar/NavComponent';
 import Footer from './components/footer/Footer';
 
+import { BlogProvider } from './context/BlogContext';
+
 function App() {
   return (
     <div className="App"> 
+    <BlogProvider >
       <BrowserRouter>
         <NavComponent />
         {/* <Home /> */}
@@ -22,6 +25,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
+      </BlogProvider>
     </div>
   );
 }

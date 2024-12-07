@@ -16,6 +16,9 @@ const Home = () => {
             <section className='search-section' >
               <SearchFilter />
             </section>
+            <section className='blogs' >
+
+            </section>
         </main>
         <footer>
 
