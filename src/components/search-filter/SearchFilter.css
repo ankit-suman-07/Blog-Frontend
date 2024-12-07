@@ -1,0 +1,20 @@
+.search-filter {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter, .search {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter img, .search img {
+    height: 20px;
+    margin: 5px;
+
+}
