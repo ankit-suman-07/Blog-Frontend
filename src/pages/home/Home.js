@@ -1,6 +1,4 @@
 import React from 'react'
-import DataFetcher from '../../components/DataFetcher'
-import NavComponent from '../../components/nav-bar/NavComponent'
 
 const Home = () => {
   return (
@@ -14,8 +12,6 @@ const Home = () => {
         <footer>
 
         </footer>
-      {/* Blog Home Page
-      <DataFetcher /> */}
     </>
   )
 }

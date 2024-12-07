@@ -9,7 +9,7 @@ const NavComponent = () => {
         <div className='logo' >
             blog<span className='dot' >.</span>
         </div>
-        <div>
+        <div className='nav-menu' >
       <NavLink
         to="/"
         className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
