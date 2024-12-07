@@ -6,6 +6,8 @@ const DataFetcher = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const [limit, setLimit] = useState(10);
   
     // Define the endpoint URL
     const endpoint = 'https://blog-backend-axna.onrender.com/api/blogs';
