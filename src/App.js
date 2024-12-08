@@ -16,7 +16,6 @@ function App() {
     <div className="App"> 
     <BlogProvider >
       <BrowserRouter>
-        <NavComponent />
         {/* <Home /> */}
         <Routes>
           <Route path="/" element={<Home />} />

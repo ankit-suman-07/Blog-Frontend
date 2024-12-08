@@ -6,9 +6,12 @@ import SearchIcon from "../../assets/search.png"
 import FilterIcon from "../../assets/filter.png"
 import "./Home.css"
 
+import NavComponent from '../../components/nav-bar/NavComponent'
+
 const Home = () => {
   return (
     <div className='main-area'>
+      <NavComponent />
         <main>
             <section className='hero' >
               <img src={MainImage} alt='main-hoarding' />
