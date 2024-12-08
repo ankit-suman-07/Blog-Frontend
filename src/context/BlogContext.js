@@ -36,7 +36,7 @@ export const BlogProvider = ({ children }) => {
     };
     console.log(data);
     fetchData(); // Call the async fetch function
-  }, [data]);
+  }, [data, filterTerm, limit, searchTerm]);
 
   return (
     <BlogContext.Provider value={{ imgEndpoint, data, setData, loading, setLoading, 
