@@ -11,7 +11,10 @@ import NavComponent from '../../components/nav-bar/NavComponent'
 const Home = () => {
   return (
     <div className='main-area'>
+      <nav>
       <NavComponent />
+      </nav>
+      
         <main>
             <section className='hero' >
               <img src={MainImage} alt='main-hoarding' />
