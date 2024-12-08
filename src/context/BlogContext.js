@@ -6,42 +6,73 @@ export const BlogContext = createContext();
 
 // Create the provider component
 export const BlogProvider = ({ children }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filterTerm, setFilterTerm] = useState([]);
-  const [limit, setLimit] = useState(10);
+  // Initialize state with localStorage data or default values
+  const [searchTerm, setSearchTerm] = useState(() => localStorage.getItem('searchTerm') || "");
+  const [filterTerm, setFilterTerm] = useState(() => JSON.parse(localStorage.getItem('filterTerm')) || []);
+  const [limit, setLimit] = useState(() => parseInt(localStorage.getItem('limit')) || 10);
+  const [data, setData] = useState(() => JSON.parse(localStorage.getItem('data')) || []);
 
-  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const endpoint = 'https://blog-backend-axna.onrender.com/api/blogs';
   const imgEndpoint = 'https://blog-backend-axna.onrender.com';
 
-
+  // Save updated state values to localStorage
+  useEffect(() => {
+    localStorage.setItem('searchTerm', searchTerm);
+  }, [searchTerm]);
 
   useEffect(() => {
+    localStorage.setItem('filterTerm', JSON.stringify(filterTerm));
+  }, [filterTerm]);
+
+  useEffect(() => {
+    localStorage.setItem('limit', limit);
+  }, [limit]);
+
+  useEffect(() => {
+    localStorage.setItem('data', JSON.stringify(data));
+  }, [data]);
+
+  // Fetch data based on current search/filter/limit
+  useEffect(() => {
     const fetchData = async () => {
-      setLoading(true); // Set loading state to true before the fetch
-      setError(null);   // Clear any previous errors
+      setLoading(true);
+      setError(null);
       try {
         const response = await axios.get(endpoint, {
           params: { query: searchTerm, filter: filterTerm, page: 1, limit },
         });
-        setData(response.data.blogs); // Update the context with the fetched data
+        setData(response.data.blogs);
       } catch (error) {
-        setError(error.message); // Handle and store the error
+        setError(error.message);
       } finally {
-        setLoading(false); // Set loading to false after fetch completes
+        setLoading(false);
       }
     };
-    console.log(data);
-    fetchData(); // Call the async fetch function
-  }, [data, filterTerm, limit, searchTerm]);
+
+    fetchData();
+  }, [searchTerm, filterTerm, limit]);
 
   return (
-    <BlogContext.Provider value={{ imgEndpoint, data, setData, loading, setLoading, 
-                                    error, setError, searchTerm, setSearchTerm, filterTerm, setFilterTerm,
-                                    limit, setLimit }}>
+    <BlogContext.Provider
+      value={{
+        imgEndpoint,
+        data,
+        setData,
+        loading,
+        setLoading,
+        error,
+        setError,
+        searchTerm,
+        setSearchTerm,
+        filterTerm,
+        setFilterTerm,
+        limit,
+        setLimit,
+      }}
+    >
       {children}
     </BlogContext.Provider>
   );
