@@ -48,3 +48,32 @@ main {
 .pagination span {
     margin: 5px;
 }
+
+@media (max-width: 1000px) {
+    .main-area {
+        width: 100%;
+    }
+}
+ 
+@media (max-width: 800px) {
+    .blogs {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .blogs {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero {
+        width: 100%;
+        height: 250px;   
+    }
+}
+
+@media (max-width: 500px) {
+    .blogs {
+        grid-template-columns: 1fr;
+    }
+}
