@@ -9,13 +9,11 @@ const BlogPostComp = ({blog}) => {
   const { imgEndpoint, searchTerm } = useContext(BlogContext);
 
   const titleHighlight = (title) => {
-    if (!searchTerm) return title; // If no search term, return title as is
+    if (!searchTerm) return title;
   
-    // Use a regular expression to split but retain spaces
     const parts = title.split(new RegExp(`(${searchTerm})`, 'gi'));
   
     return parts.map((part, index) => {
-      // Check if part matches the search term (case-insensitively)
       if (part.toLowerCase() === searchTerm.toLowerCase()) {
         return (
           <span key={index} style={{ backgroundColor: '#44c3d0', padding: '0 2px' }}>
@@ -24,7 +22,6 @@ const BlogPostComp = ({blog}) => {
         );
       }
   
-      // Preserve other parts (including spaces)
       return <span key={index}>{part}</span>;
     });
   };
@@ -47,14 +44,5 @@ const BlogPostComp = ({blog}) => {
     </div>
   )
 }
-
- // <li key={item.id}>
-          //   <h3>{item.topic}</h3>
-          //   <p>{item.text}</p>
-          //   <p><strong>Category:</strong> {item.category}</p>
-          //   <p><strong>Author:</strong> {item.author}</p>
-          //   {/* Render the image if available */}
-          //   {item.image && <img src={`${imgEndpoint}${item.image}`} alt={item.topic} width="200" />}
-          // </li>
 
 export default BlogPostComp

@@ -6,6 +6,7 @@ import './Home.css';
 
 import NavComponent from '../../components/nav-bar/NavComponent';
 import BlogPostComp from '../../components/blog-post/BlogPostComp';
+import Footer from '../../components/footer/Footer';
 
 import { BlogContext } from '../../context/BlogContext';
 
@@ -40,7 +41,7 @@ const Home = () => {
       </main>
 
       <footer>
-        <p>© 2024 BlogSite. All rights reserved.</p>
+       <Footer/>
       </footer>
     </div>
   );
