@@ -28,3 +28,19 @@ main {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
 }
+
+.pagination {
+    border: 2px solid black;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination:hover {
+    cursor: pointer;
+}
+
+.pagination span {
+    margin: 5px;
+}
