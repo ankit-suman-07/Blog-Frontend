@@ -8,7 +8,7 @@ export const BlogContext = createContext();
 export const BlogProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterTerm, setFilterTerm] = useState("");
-  const [pagination, setPagination] = useState([]);
+  const [limit, setLimit] = useState(10);
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,12 +18,15 @@ export const BlogProvider = ({ children }) => {
   const imgEndpoint = 'https://blog-backend-axna.onrender.com';
 
 
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true); // Set loading state to true before the fetch
       setError(null);   // Clear any previous errors
       try {
-        const response = await axios.get(endpoint);
+        const response = await axios.get(endpoint, {
+          params: { query: searchTerm, filter: filterTerm, page: 1, limit },
+        });
         setData(response.data.blogs); // Update the context with the fetched data
       } catch (error) {
         setError(error.message); // Handle and store the error
@@ -38,7 +41,7 @@ export const BlogProvider = ({ children }) => {
   return (
     <BlogContext.Provider value={{ imgEndpoint, data, setData, loading, setLoading, 
                                     error, setError, searchTerm, setSearchTerm, filterTerm, setFilterTerm,
-                                    pagination, setPagination }}>
+                                    limit, setLimit }}>
       {children}
     </BlogContext.Provider>
   );
