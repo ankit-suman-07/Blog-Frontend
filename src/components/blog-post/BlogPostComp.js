@@ -1,4 +1,6 @@
 import React, {useContext} from 'react'
+import { Link } from 'react-router-dom';
+
 import "./BlogPostComp.css"
 
 import { BlogContext } from '../../context/BlogContext';
@@ -15,12 +17,11 @@ const BlogPostComp = ({blog}) => {
         <div className='blog-category' >
           {blog.category}
         </div>
-        <div className='blog-text' >
+        <Link to="/blogpage" className='blog-text' >
           <div className='blog-text-inner' >
           {blog.text}
           </div>
-          
-        </div>
+        </Link>
     </div>
   )
 }

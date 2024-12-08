@@ -61,6 +61,7 @@
 }
 
 .blog-text:hover {
+    border-top: 5px solid #f59407;
     opacity: 0.8;
     cursor: pointer;
 }
