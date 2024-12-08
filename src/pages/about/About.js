@@ -7,7 +7,11 @@ const About = () => {
   return (
     <div className='main-area'>
       <NavComponent />
-      <main></main>
+      <main>
+        <section className='demo-text' >
+          About Us
+        </section>
+      </main>
       <footer>
        <Footer/>
       </footer>

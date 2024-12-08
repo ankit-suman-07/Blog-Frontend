@@ -8,8 +8,10 @@ const Contact = () => {
     <div className="main-area">
       <NavComponent />
       <main>
-
-      </main>
+        <section className='demo-text' >
+          Contact Us
+        </section>
+        </main>
       <footer>
        <Footer/>
       </footer>
