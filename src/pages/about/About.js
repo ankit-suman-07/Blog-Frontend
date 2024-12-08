@@ -1,14 +1,16 @@
 import React from 'react'
 import NavComponent from '../../components/nav-bar/NavComponent'
+import Footer from '../../components/footer/Footer'
 import "./About.css"
 
 const About = () => {
   return (
     <div className='main-area'>
-      <nav>
       <NavComponent />
-      </nav>
-      About Page
+      <main></main>
+      <footer>
+       <Footer/>
+      </footer>
     </div>
   )
 }

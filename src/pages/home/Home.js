@@ -24,6 +24,7 @@ const Home = () => {
       <main>
         <section className="hero">
           <img src={MainImage} alt="Main hoarding showcasing blog content" />
+          <span>Everything Tech at your FingerTip</span>
         </section>
         <section className="search-section">
           <SearchFilter />
