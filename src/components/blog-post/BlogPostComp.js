@@ -8,11 +8,19 @@ const BlogPostComp = ({blog}) => {
   
   return (
     <div className='blog-post'>
-        <div>
-            {blog.image && <img src={`${imgEndpoint}${blog.image}`} alt={blog.topic} className='blog-post-img' />}
+        {blog.image && <img src={`${imgEndpoint}${blog.image}`} alt={blog.topic} className='blog-post-img' />}
+        <div className='blog-topic' >
+          {blog.topic}
         </div>
-        {blog.topic}
-        {blog.id}
+        <div className='blog-category' >
+          {blog.category}
+        </div>
+        <div className='blog-text' >
+          <div className='blog-text-inner' >
+          {blog.text}
+          </div>
+          
+        </div>
     </div>
   )
 }
