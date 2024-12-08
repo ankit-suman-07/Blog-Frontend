@@ -7,7 +7,7 @@ export const BlogContext = createContext();
 // Create the provider component
 export const BlogProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterTerm, setFilterTerm] = useState("");
+  const [filterTerm, setFilterTerm] = useState([]);
   const [limit, setLimit] = useState(10);
 
   const [data, setData] = useState([]);

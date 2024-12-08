@@ -25,7 +25,7 @@ const SearchFilter = () => {
         setDropdownVisible(false); // Close the dropdown
     };
 
-    const categories = ['Technology', 'Health', 'Business', 'Lifestyle', 'Education'];
+    const categories = ['Programming', 'Web Development', 'AI/ML', 'Cloud Computing', 'Data Science'];
 
     return (
         <div className='search-filter'>
@@ -45,9 +45,9 @@ const SearchFilter = () => {
                             {filterTerm.includes(filter) && <span className="checkmark">✔</span>}
                         </div>
                     ))}
-                    <div>
-                    <button onClick={() => setDropdownVisible(!dropdownVisible)} >Apply</button>
-                    <button onClick={handleClearBtn} >Clear</button>
+                    <div className='dropdown-btn' >
+                        <button onClick={() => setDropdownVisible(!dropdownVisible)} >Apply</button>
+                        <button onClick={handleClearBtn} >Clear</button>
                     </div>
                     
                 </div>

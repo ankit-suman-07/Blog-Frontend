@@ -19,10 +19,6 @@ main {
     object-position: center;
 }
 
-.search-section {
-    margin-top: 10px;
-}
-
 .blogs {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -30,15 +26,23 @@ main {
 }
 
 .pagination {
-    border: 2px solid black;
+    background-color: #44c3d0;
+    height: 40px;
     margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fefefe;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s;
 }
 
 .pagination:hover {
+    opacity: 0.5;
     cursor: pointer;
+    font-size: 15px;
 }
 
 .pagination span {
