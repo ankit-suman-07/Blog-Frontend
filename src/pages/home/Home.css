@@ -1,10 +1,8 @@
 .main-area {
     width: 1000px;
-    border: 2px solid black;
 }
 
 main {
-    border: 2px solid black;
     min-height: 100dvh;
 }
 
@@ -22,6 +20,11 @@ main {
 }
 
 .search-section {
-    border: 2px solid black;
     margin-top: 10px;
+}
+
+.blogs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
 }

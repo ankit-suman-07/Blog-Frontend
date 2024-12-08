@@ -1,0 +1,10 @@
+.blog-post {
+    border: 2px solid black;    
+}
+
+.blog-post-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}

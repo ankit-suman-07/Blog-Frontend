@@ -5,28 +5,23 @@ import SearchIcon from "../../assets/search.png";
 import { BlogContext } from '../../context/BlogContext';
 
 const SearchFilter = () => {
-    const { theme, toggleTheme } = useContext(BlogContext);
-    const [inputValue, setInputValue] = useState('');
+    const { searchTerm, setSearchTerm, filterTerm, setFilterTerm } = useContext(BlogContext);
     const [dropdownVisible, setDropdownVisible] = useState(false); // State to show/hide the dropdown
-    const [selectedCategories, setSelectedCategories] = useState([]); // State for selected categories
 
-    const handleInputChange = (event) => {
-        setInputValue(event.target.value);
-    };
 
-    const handleCategoryClick = (category) => {
-        // Toggle category selection
-        setSelectedCategories((prevSelectedCategories) => {
-            if (prevSelectedCategories.includes(category)) {
-                return prevSelectedCategories.filter(item => item !== category); // Deselect category
+    const handleCategoryClick = (filter) => {
+        // Toggle filter selection
+        setFilterTerm((prevFilterTerm) => {
+            if (prevFilterTerm.includes(filter)) {
+                return prevFilterTerm.filter(item => item !== filter); // Deselect filter
             } else {
-                return [...prevSelectedCategories, category]; // Select category
+                return [...prevFilterTerm, filter]; // Select filter
             }
         });
     };
 
     const handleClearBtn = () => {
-        setSelectedCategories([]); // Clear all selected categories
+        setFilterTerm([]); // Clear all selected categories
         setDropdownVisible(false); // Close the dropdown
     };
 
@@ -40,14 +35,14 @@ const SearchFilter = () => {
                 {/* Dropdown menu for categories */}
             {dropdownVisible && (
                 <div className="dropdown">
-                    {categories.map((category) => (
+                    {categories.map((filter) => (
                         <div
-                            key={category}
-                            className={`dropdown-item ${selectedCategories.includes(category) ? 'selected' : ''}`}
-                            onClick={() => handleCategoryClick(category)}
+                            key={filter}
+                            className={`dropdown-item ${filterTerm.includes(filter) ? 'selected' : ''}`}
+                            onClick={() => handleCategoryClick(filter)}
                         >
-                            {category}
-                            {selectedCategories.includes(category) && <span className="checkmark">✔</span>}
+                            {filter}
+                            {filterTerm.includes(filter) && <span className="checkmark">✔</span>}
                         </div>
                     ))}
                     <div>
@@ -62,12 +57,13 @@ const SearchFilter = () => {
             <div className='search'>
                 <input
                     type="text"
-                    value={inputValue}
-                    onChange={handleInputChange}
+                    value={searchTerm}
+                    onChange={e => setSearchTerm(e.target.value)}
                     placeholder="Enter search term..."
                 />
                 <img src={SearchIcon} alt='search-icon' />
             </div>
+            {searchTerm}
         </div>
     );
 };

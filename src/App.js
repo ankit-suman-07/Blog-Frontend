@@ -6,7 +6,6 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
 import Contact from './pages/contact/Contact';
-import NavComponent from './components/nav-bar/NavComponent';
 import Footer from './components/footer/Footer';
 
 import { BlogProvider } from './context/BlogContext';

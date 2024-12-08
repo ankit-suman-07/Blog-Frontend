@@ -6,7 +6,6 @@ export const BlogContext = createContext();
 
 // Create the provider component
 export const BlogProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light');
   const [searchTerm, setSearchTerm] = useState("");
   const [filterTerm, setFilterTerm] = useState("");
   const [pagination, setPagination] = useState([]);
@@ -17,9 +16,7 @@ export const BlogProvider = ({ children }) => {
 
   const endpoint = 'https://blog-backend-axna.onrender.com/api/blogs';
   const imgEndpoint = 'https://blog-backend-axna.onrender.com';
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,10 +33,12 @@ export const BlogProvider = ({ children }) => {
     };
     console.log(data);
     fetchData(); // Call the async fetch function
-  }, []);
+  }, [data]);
 
   return (
-    <BlogContext.Provider value={{ imgEndpoint, data, setData }}>
+    <BlogContext.Provider value={{ imgEndpoint, data, setData, loading, setLoading, 
+                                    error, setError, searchTerm, setSearchTerm, filterTerm, setFilterTerm,
+                                    pagination, setPagination }}>
       {children}
     </BlogContext.Provider>
   );
