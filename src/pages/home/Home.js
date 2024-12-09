@@ -33,7 +33,7 @@ const Home = () => {
           {data && data.length > 0 ? (
             data.map((item) => <BlogPostComp key={item.id} blog={item} />)
           ) : (
-            <p>No blogs available</p>
+            <p>Loading.....</p>
           )}
         </section>
         <section className="pagination" onClick={handlePagination} >
