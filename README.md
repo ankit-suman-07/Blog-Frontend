@@ -11,26 +11,26 @@ Features:
 
 ## How to run locally
 
-Step 1:
+Step 1: Clone the repository
 ```
 git clone https://github.com/ankit-suman-07/Blog-Frontend.git
 ```
-Step 2:
+Step 2: Move to the directory containing the app
 ```
 cd app
 ```
 
-Step 3:
+Step 3: Install the dependencies
 ```
 npm i
 ```
 
-Step 4:
+Step 4: Start the app
 ```
 npm start
 ```
 
-Step 5:
+Step 5: Go to this link to access the app
 ```
 http://localhost:3000
 ```
